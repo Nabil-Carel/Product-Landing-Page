@@ -4,10 +4,18 @@
     margin-left: 40px;
 }
 
-#navbarNavAltMarkup {
-    text-align: right;
+.nav-link {
+    position: relative;
+    left: 140%;
+    margin-right: 60px;
 }
 
 .navbar-brand {
     margin-left: 20px;
+}
+
+h4 {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
 }
