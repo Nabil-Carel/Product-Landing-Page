@@ -10,20 +10,21 @@
 
 <body>
 
-    <header id="header">
+    <header id="header" class="sticky">
         <div>
             <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-warning" id="nav-bar">
-                <img id="header-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPoALzSl61MJkRCl_3-lLfvdiEzBhpAVEG2FAJM2B9gwexV-xf" alt="trombone">
-                <a class="navbar-brand" href="#">Original Trombones</a>
+                <img id="header-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjGnN8xdd-LNsPII9NyRAZiAfy0_FSHc2MbUqstd5LoKyIwvR8">
+
+                <a class="navbar-brand" href="#">Gimme That Money</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                           <span class="navbar-toggler-icon"></span>
                         </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
 
-                        <a class="nav-item nav-link" href="#">Features</a>
-                        <a class="nav-item nav-link" href="#">How it work</a>
-                        <a class="nav-item nav-link" href="#">Pricing</a>
+                        <a class="nav-item nav-link" href="#catchword">What i do</a>
+                        <a class="nav-item nav-link" href="#catchword">Features</a>
+                        <a class="nav-item nav-link" href="#userInput">Get started</a>
 
                     </div>
                 </div>
@@ -34,59 +35,77 @@
     </header>
 
     <main>
-        <h4 id="catchword">Handcrafted, home-made masterpieces</h4>
+        <p hidden style="margin-top:300px" id="whatIDo"></p>
+        <h4 id="catchword">Only me can make the best use of your money</h4>
+        <br>
+        <p id="description">Do you have too much money? Is your wallet too heavy ?<br> To see so many zeros on your bank account gives you headache? <br> Is your account balance so long that it is difficult to read?<br> Don't worry anymore. <br>The money cleaner is here
+            to get rid of all these nuisances.</p>
+
+        <div id="features">
+            <div id="paragraph">
+                <img id="icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALIAAACyCAMAAADRVGVaAAAAyVBMVEUAAAD/zjb///+srKywsLD7yzX8/Pzo6OgFBAGpqanvwTNcXFwJBwL3yDTxwzMiIiLBwcEUEATkuDC5ubkNCwPPpywZFAXl5eXx8fHPz88dFwYiGweAZxuriiR9fX0tLS2WlpYxKArZry49PT0UFBTCnSlJOw+dfyFyXBhKSkpTQxLZ2dlfTRRcShOIiIgvJgo+Mg2ggSKIbh0oIAhsVxdDNg64lSeSdh/FnypoaGjSqiwhGwcYGBgmJiZxWxiGbBx/f39gYGBxcXHbLu+yAAASOElEQVR4nN1d+0OiShumdi0isEC0VKik9RJp4g1cdzfP7v//R31zhRkYhsFsz/F7fjhnK8XH4X2f9zIXtPMj4v7y7rXbvW21vn79+uUL+E+rddvtvt5d3h/zU7TjXObi8rXbAjTL8LXVfb28OM5nHYHy/V23VU6WRat7d4Tx/iDli0uW7tPbn+uX58ebn990XdN0/dvPm8fnl+s/b08s7Y+O9kcoX9x1qS1cvX1/eTS1UpiPL9/frqiVdO8+wvpwypeU79XD9aNezjaD/nj9cEVZX/5tyhevxB6efqvRzWj/JlbSej1wqA+ifE8G+On6pg5dipvrJzLUBznjAZQvb7E9fP91CF+MX9+xhdweYB+1KRPCby+17KEI/eXtQNI1Kd9jwg+PH+OL8fiASdc0j1qUL7rYIn4egzDET2wf3VqOWIPyxStyuj9HI4xI/0GOWEc91ClfIll7OEgjZLhB5tFSN2lVytgmno5iw3k8PtWyDkXKl9Amrl4+gzDECzTpr4oDrUQZD/HDt89irGnfHtQHWoXyPbTip+fPIwzxDK2jpaJ3CpTvoFH884lDjPHtH2gcd8eg3P1UK2aBLLr7YcoXMNw9HV3ZxLiBxnFbZdAVlJEZf75RUCDjqDJoOeV7aMbXf4swxDU0aDlnKWWoxlefrBR5PF9VKbSMMpSKq0+JdzI8XlUIh4Ty3V90PBbICSWcyykjxkfN2lTxU865lDJi/Nekgsc3KecyytDz/i3GmHOpD5ZQvv9XGRPOJVonpowY17djexC+J37c3jmGYQS7bbxYTke9g+ran+WchZQvQMy7qqcV+mqaxM6ZAM2tvx64tTnfAK1rCWO3kPJtTT02o/3WEtFNESzCXk3OUJ9vVSnD3K1GzBvsd1K6BMZiVG+sn0vyOgHluzp5hTuLGyqE8Vh7tYb6Wix1RcrQ9R4UL2pPAmW+eKiTQQ3OD0IXLFCGrqcob+5E6G9yWIuVMmUodUUXLFDuKovFTMmEBSO9tFU5Q9komHOe8iWwH6WqKYoPIwwRhKqcXwCdfBTMUb4AhvyPwqV0Ty5qKRre+7hdtB+/r8gZlClfL6SUu2qGPEiHuNKaY/DyzsgbNvlfOzM1ytCcuzLKl2qKPKWf76w7SRVnD79ntR7yN2asZtHPBdPgKEO1qNY3k7K0lh3wo1dBuRHRN875mNNWk46HvGpwlF+BWlSahU2NIiZcptnoNYOgaCntLOiZ0yFrHBsVyt+AaryWUYZBpFIt+m0yxJP0VyMD/8of2K7rDt7bOc5j9v0jhrQ1VeH8kgsoLGXoe1XvH5Bwt42YX24w5zZJM/V1LoaPuEtMGfPwVDjnPJChfA8MvSp/i8iALvgMZ4Q57lNWPOWA9zQ7adTi/AiI3Qsp31b73gAzbuzzf5ig3xupQy0lpgGwmaxn08l+vDPOlgqcH7g0NKMMBa4iUq+wVTSKJqhj+/Xpz24uXSoJd3ov9MPqquWGEzqNHeQ/8nfaW+w0oiiApa6x4X9O4XRKr9pRKLT+sMOsMYN8Ja/23LicMbXeIf38HwbPecG+2OxH4TSM5uXfI4efV8wwa8wgf5e/b4w/fC38Iw0v1Gb0vNKlX7QzXexw9LSM2Jurcf7ODDOlDOVCPshkHAuehzCggxoQKckb81kTu+Yq4WONFStldT8Z0aCUu1VyMW/yDsbhRya1RLU2+UxvC2sod5nLjpAxjYTX5PGQaTOhDJNOqSab2PUCoflFzMjh0SQvZ3hBaY7y1oLRWErWyxA8ZkkooQyyizfpW/KKwMD1uKGDjqaPc6zakPEk55IZ4mpHfEszDUK5VZFdDPB9TkR/yg2dFWk/8hWLs9I43TOGyRog8emX2FZyBplGi6UMFU4qjziXCQSNiEFh6LbLwq+gXEzSn4J1j1rCj2VDkbOe6pxGnU+qcLPsk3MwxebJA9rKKM0rYrYvYNOv51dFlO/UATXqfLJVNyYWhK3gqiMFxk1Q6Nmp6CWcr81SZalKRH9RB0SU7yqyTuJ7keBPKP8JxsMCTwYw80nrLZ8Ylz1H1pFZvVNVwT6R3pFG7ELW0bKxhg1Ff4PS4ADJHZW3jaDsDahZOLjFNVg4jtOeaivG7Bei6zO4JpahEbuQ5XBrfElhmArPSAi3F2WUYY2d/hFHmpAI+ZiVlmZFLXhDLEPDevEkeamLLbkt9g/PauCB0/cllIGR9qly44x6JBZocS6Q4Qlrhobt4rfklSE7PkXM0/CyFBKBLFOBwx68aBpO0Abgw/euIgj+xpah4TgiC9b45hkK/R2hbWzBH3z4j8bY8/DX6/V6HVcHyCmkyL8ZPOJooqEkThZHVliGxPkQj76o6wW8ykWm6xR6LVwYajjbCsowmtwjynfyNhyJs0oNKVG7awJsB32VfAGoae/pi4JxOK/u8T8gmdOqJE7HzmdUJgH2IFyIGvrA+zbw/800m9dtiMFoRoSxuRhVp3IQWOa0KlNWswt3LZ6OOkPaiKqDxmK/xD38yDCMZup5zYSKm273B9HKLqePjVk7v5CbMnF2cflEMZPMP4RsWwOZ1whEEd/38SRLjAffjSZx2zEaZ01nFy9LJoKgMV8AypfyVBnrhVzmJ2KyOcqNZDVHHmjaNqQExdp6R6M193LfOUiErvgGlVmD2b0kiyPBuiSOYMh7n1OaO+XdAQRVBxFbjQXl1VksKCe+wzxfg94nye432KNEuT3FTMoYhiDsD4vc147PYnjvXK+sWBkXXP4F+p8GuwES7yMjOCl/RV80RAx8Wm4DOzaJa0VRNJ2cxdBM5vkqkUGQL2SR/2nnICeSSIyP31zufbo07wRom+QqO38YBDgrRmFyBxlvpDMXVi5LMEFmdK7dS3MiktxLKL/LPhJ97Jy1Hdwft4H1GlDwZqlRNJrDZDQt2Eiuywgyo3tNLhg9co1Sw1iVVs0pwMD2srEkX36wh7nsLIs9DaR/xanEJecBUDK0O2n3kKbmpS1Vhdm/WE+bYwBNJu2O2O+LKK8n7+9Z3Y3wzn7cHxCytVdpuCaJp7giAZgK59yd9Wi63NIPbgALWGU+GqTZiu1w78mu2mebShar0CBkv2pyjSMFCaeppp3eq57QeRwcd3qjiY+kAgZ7RrutPfA7eAmmP+Ms+VjFNkd2TCiEKgcpS2b60k9Kdb2zcIw2Ket1sVkwbu4OZskQOprJWuluAkduk92hcSG4zplwyDjSM6RcIsurCSqP0sKYZo4mYrmz+S/EA6ipvWGS4z68VMTJN2Chp4LcSASxlTE5J1vFAYT5VmuJSlXbc5o8ZWoZJLFDA1mWWixhR8aJk7DPCn6UDB1Kw+ixHRA2LG7oPITODHNWFIKStQUpF2YnYWKGawg/fRu52xH+yQo1u6w8RX0wdAOabX+yYRa62NFkjNrhC/bSxPTNENrsxorxGzqMNWf1zDdI+WuBMi7v8cvi/Ns29GZuJfnmiA3jzjaZrZgJ1lWYxOAFq/TGY5uzfQN1oJ0z37Ujz3dYLUpFBlD+CinzljRvp0PFya7HGoYcUCK40tUI/HXEJzmbtLzGwuuhMIneN2znpTMtMHQRZdpjwJQzwyApc6862uEmXJj/JShHE2bBnK73Qy+GA4DTjgkZFKFLp5aBKH/58oVj3ORexS5dgFFMM5XWP00EkyUIVuB7EWPdsP+/JubooAw3FAanNJxAujzlLGXAM3VcNwVdu9TpWMCKoDzxBwlQSId7lOXiLuqUuCAvXa/Hbd4AZyxlzjDczE2b/cJtsgb8SyQYpY3/EjSC2Att1F/eidaS6CNu/R2VuaItsz6DItya+xx08U41Z2cRsaGiFAPsGyVp4oThTO8EpZyKHNffRuaTcyI0edqRZ2/OIsTaILZKBpAHDEdGSTfcyy5AG7lI5JhQws98oSRxkPtYpKFufr4phbVLRuQ261FSQRneM5xXGeKFlQwfhnKLDdj8JAJytoKmYaOaiTI4a+tFJuW7L2hrAcCldGqJQTIa9Hr57kVW8VDDQAGbSYt87oroVWahTMCG1+NfC7zJn62oT0TeUGHpqp+zu4bhbFF56g0XRNN+pCND3Q+lRVny2TcKl8x/jYyzFmZe6PiTiA6Qu1EYXwjYdi6oD2IGzLuJc92sFKbW/kzyZZLi51bX4G6LQF0JZ7RItQHppiLVCcfK60BhqCtoPHJv6D/EdlPKNJSgFD8rpIhTxePl2G8bZ3g+YSMYMipKvXcvHV3NnK9jlWBOACvtOaPcja3vkMzYbqfpOaWcBmxUSGXl6jD99oBAL8RdSlvkaPlJDX01G+/UV14DWODO66nRNbZL4LjQ2ZBMLUjjS+vTD0/TIlSuZk0BTDnfoOFE2HKCYTKZsdOjZn+WtGsMLwYcxay58Y6ExhyTwVg7hERaQ6TCjZoCWesFf+l2rhE22w6Hwzj2k8n7bDTvcY2lzgAkA7XpnmEDyOSAMjKT5hYZHGmed2hmla1MQq2XrMFFnMGZFLp3xdJMB2yZwqguIEcmCmypqfY37EelESvtouAGV9bEpwUHEK2wX9qcNTuDmQeq5kPZQiBhYCfsRZ0dd08/ImtukzZiqnIuI1DN9mIfRvN+zzYh3F5vNd+E66UfB4biYutyWNgXRszy1uLk0TxrT2ZNBtKszVrihWk7y2o6AYJhWR9mmgL6GDQ+pn5ocm0sUCAyq6aYVSCkJZ5JxlRw+U8AFNn5llvwAHQuHmVps8t25ZpMg4tMPGTTO+La59hoQO2NUXyL+KlKP1l6CQpgbErJZNN0eoeZRKtcpH4M0HQIqUZxBiDU3PmUGTt2yoNOojFTldFHZEAR0P2RRaCWeFjgvPO5HWJc7yudqrxLV/UVU83jY5LezR10wZJ1DhT8xEM6IcxMu1dtBfg4hmZWyLah3c4lZVluJ0c27c4Yc3497NEB1waaqeIizmbZrppGfr9MtriBXUJSWtUdCWNeSwOUys/HAtKNYWF+lVlCwizUiT6BpuWn9x4uyu+w6azlIZNc5UsZZyyYEGYW6jDLoSpn8WrDGQ+ygYAlcC7GksE0I88PnCYIsiC/Xc5ESynY5VDsioxC9+9DsIZr+OE0RsGu3qbwmjFdqGF2VoP5qle2EYlddMYu7TtmBAyWtBbALgIr1MIqYUjaV1p2zS3tYxdQShcq1OGb0EUVJs2NYTokllGVnRr8Akp2mapSA1mBL7m9nekQBI8OvCjsDq2Ec/Sxyu5yfpkqtxj4o4mGNdzT8dVHMIekq85gQSeMG4HKvuH8YmB2yfWHhtlZrLM9DC6WH6uPtBiu9hWmt02lTcP5JdfcwvZDh9mJvQ3n7czGjVUTLpwVdhgEe4FEKCxsZ7cPdKobw3lYQZ6uxtSjMN3cwnRIuMJSvtCKorh9gNuk4e5r2EbDGSZT0TEHWdEPa3rojoWNGxBK2+dEmzRyW2FWnkov0Nj6XjgoUX6XiaNYdoVtfUXGoq0w+Q1HOgigW3HlbzV3sBMTDmQLFE22ZYr7U2vBtRQZCzccibZ16Z1o9L5PEh9jkSR7bzrazAut6yL4yQkL2qsomVez47JtXQqb5wrQ3dVosoiLpjHIlzfDheCAB0d507t485zKFkUK07Tnm+lksQ0s0d0tX/nGoa24C618i6LKRlCCwdBhnd/gPtuVLQBloLh1HKJsI6jSdluCiL/x7aziGezVCBuqZqzJttsqbWomyBVszvu801lt3hdq8yTAtuuc7FG+qVlt6zhFxNcvlmFULKRkv2GNIZZvHVfboJ9iemA10Ehqnfgi3aCveAxCCvuQg1Mafh2b0KqOQVA9bOJw0s1FTcJVh00oH+nBkJ6qzKQSBHv1o2kIKo/0UD44hYWirhn+rP6xVgoHp6gfT8OiehY48Nd1D7RCUDieps4hQBzM+XSxFcbpRnDQsWEISocA1TlqKQ+9s5nuF/EwMBCCLchRp6PVgXQ15aOWah1o9clQPNCq5rFhnwnlY8NqH872WahxOFv9I/A+BbWOwDvkoMGjo+ZBg4ce53hESI6g/L85NPMUjyY9xQNgT/GY3VM8zPgUj4w+xYO5T/H4c3LI/Gc+3IEHetTDxw6ZP8Wj/M9P8IEJ56f4WIpTfPjHKT5i5fwEH2RzfoqPCzo/wYcynZ/io6/O4UPyPukBY7WeivZvPsbt1194jBvEyT0sjyF9Oo8khDi5Bz9CnNzjNRFO7SGmCPlHxUp46/+JR8Vi1uIH8ur4gbz6f+6BvAQn9thjihN7uHSGv/MI7/8B2fXYJWbfKFcAAAAASUVORK5CYII=">
+
+                <div id="text">
+                    <h4>Worlwide reach</h4>
+                    <p>Send me money from anywhere in the world and in any currency.</p>
+
+                </div>
+            </div>
+
+            <div id="paragraph">
+                <img id="icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRJul9IEJSIHW2SHjR0b6Zu8eZyDJ2oQSkREAxfLqEnVVdGTEk">
+
+                <div id="text">
+                    <h4>Choice and Convenience</h4>
+                    <p>Transfer directly to my bank account, for cash pick up, or even <br>to my mobile wallet in all countries, even North Korea.</p>
+
+                </div>
+            </div>
+
+            <div id="paragraph">
+                <img alt="prenium icon" id="icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSGSlxzFeCgwggwxLvZWGsr7l61U0zTlmgVEsDK3Zd1rra3cxn">
+
+                <div id="text">
+                    <h4>Money in seconds</h4>
+                    <p>You will not have time to regret your decision that your<br> bank account will be empty. Please note that there is no refund.</p>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="video-div">
+            <iframe id="video" width="554" height="280" src="https://www.youtube.com/embed/KoTjuGN__3I" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <br>
+        <p style="text-align: center">Make a donation to help me make my own ads instead of stealing the ones of others.</p>
+
+
+
+        <h4>Your donations fuel my bank account.</h4>
 
         <div id="userInput">
             <form id="form" action="https://www.freecodecamp.com/email-submit">
 
-                <input id="email" type="email" placeholder="Enter your email address" required>
-                <br>
-                <div id="submitButton"><input id="submit" type="submit" value="GET STARTED"></div>
+                <input id="email" type="email" name="email" placeholder="Enter your email address" required>
+
+                <div id="submitButton">
+                    <input id="submit" type="submit" value="GET STARTED">
+                    <br>
+
+                </div>
 
 
             </form>
         </div>
 
-        <div id="paragraph">
-            <img alt="prenium icon" id="icon" src="https://thumb1.shutterstock.com/display_pic_with_logo/4491568/614894759/stock-vector-premium-icon-vector-614894759.jpg">
-
-            <div id="text">
-                <h4>Premium Materials</h4>
-                <p>Our trombones use the shiniest brass which is sourced locally. This will increase the longevity of your purchase.</p>
-
-            </div>
-        </div>
-
-        <div id="paragraph">
-            <img alt="prenium icon" id="icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO6YGaqv0ZrsmESvGyQINi2MFtZ2Xl1QrsS8czQLVz4Z6F3KBeLg">
-
-            <div id="text">
-                <h4>Fast Shipping</h4>
-                <p>We make sure you recieve your trombone as soon as we have finished making it. We also provide free returns <br>if you are not satisfied.</p>
-
-            </div>
-        </div>
-
-        <div id="paragraph">
-            <img alt="prenium icon" id="icon" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-wc0MAj89wB8Gdia3TsL6u9gJ_pJ0kGbeRWNJrXCZUYbhFlMm">
-
-            <div id="text">
-                <h4>Quality Assurance</h4>
-                <p>For every purchase you make, we will ensure there are no damages or faults and we will check and test the pitch<br> of your instrument.</p>
-
-            </div>
-        </div>
-
-        <div>
-            <iframe width="600" height="400" src="https://www.youtube.com/embed/y8Yv4pnO7qc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-
-
-
-
-
 
     </main>
+
+    <footer>
+        <p>Copyright 2018, Gimme That Money</p>
+    </footer>
 
 </body>
 
